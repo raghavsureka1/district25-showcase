@@ -49,8 +49,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-gold" />
-                <a href="tel:+919876543210" className="text-cream/70 hover:text-gold transition-colors">
-                  +91 98765 43210
+                <a href="tel:+919538455783" className="text-cream/70 hover:text-gold transition-colors">
+                  +91 95384 55783
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -66,7 +66,11 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-cream/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-cream/50">
           <p>© 2025 Nambiar Developers. All rights reserved.</p>
-          <p>RERA No: PRM/KA/RERA/XXXXXXX</p>
+          <div className="flex items-center gap-4">
+            <Link to="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+            <span>|</span>
+            <p>RERA No: PRM/KA/RERA/XXXXXXX</p>
+          </div>
         </div>
       </div>
     </footer>
