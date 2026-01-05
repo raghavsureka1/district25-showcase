@@ -67,9 +67,15 @@ const Header = () => {
               {link.label}
             </button>
           ))}
+          <a
+            href="tel:+919538455783"
+            className="flex items-center gap-2 text-gold font-semibold hover:text-gold/80 transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            +91 95384 55783
+          </a>
           <Link to="/enquiry">
             <Button variant="hero" size="default">
-              <Phone className="w-4 h-4 mr-1" />
               Enquire Now
             </Button>
           </Link>

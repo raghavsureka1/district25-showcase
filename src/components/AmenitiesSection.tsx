@@ -37,7 +37,7 @@ const AmenitiesSection = () => {
             Live The Complete Life
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-            61+ World-Class Amenities
+            100+ World-Class Amenities
           </h2>
           <p className="text-muted-foreground text-lg">
             From a 2.5 lakh+ sft clubhouse to an endless array of sports facilities, wellness zones, and entertainment spaces - everything you need is within your community.
