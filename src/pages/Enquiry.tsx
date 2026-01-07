@@ -65,10 +65,10 @@ const Enquiry = () => {
         },
         body: JSON.stringify({
           access_key: "7375079e-3a13-4548-ba42-b0ec097fe106",
-          to: "pranavarabu@gmail.com",
           subject: "New Enquiry - Nambiar District 25",
           from_name: data.name,
           name: data.name,
+          email: "noreply@district25.com",
           mobile: `+91 ${data.mobile}`,
           unit_type: unitLabel,
           message: `New enquiry from ${data.name}\n\nMobile: +91 ${data.mobile}\nInterested Unit: ${unitLabel}`,
