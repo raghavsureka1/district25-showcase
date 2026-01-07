@@ -55,16 +55,45 @@ const Enquiry = () => {
   const unitType = watch("unitType");
 
   const onSubmit = async (data: EnquiryFormData) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    console.log("Enquiry submitted:", data);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "Enquiry Submitted Successfully!",
-      description: "Our team will contact you within 24 hours.",
-    });
+    try {
+      const unitLabel = unitOptions.find(opt => opt.value === data.unitType)?.label || data.unitType;
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your Web3Forms access key
+          to: "pranavarabu@gmail.com",
+          subject: "New Enquiry - Nambiar District 25",
+          from_name: data.name,
+          name: data.name,
+          mobile: `+91 ${data.mobile}`,
+          unit_type: unitLabel,
+          message: `New enquiry from ${data.name}\n\nMobile: +91 ${data.mobile}\nInterested Unit: ${unitLabel}`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Enquiry Submitted Successfully!",
+          description: "Our team will contact you within 24 hours.",
+        });
+      } else {
+        throw new Error(result.message || "Failed to submit enquiry");
+      }
+    } catch (error) {
+      console.error("Error submitting enquiry:", error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or call us directly at +91 95384 55783",
+        variant: "destructive",
+      });
+    }
   };
 
   const unitOptions = [
@@ -235,7 +264,7 @@ const Enquiry = () => {
           </p>
           <div className="flex gap-6">
             <div>
-              <div className="text-2xl font-display font-bold text-gold">61+</div>
+              <div className="text-2xl font-display font-bold text-gold">100+</div>
               <div className="text-sm text-cream/70">Amenities</div>
             </div>
             <div>
