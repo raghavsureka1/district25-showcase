@@ -113,6 +113,13 @@ const Header = () => {
                 {link.label}
               </button>
             ))}
+            <a
+              href="tel:+919538455783"
+              className="flex items-center gap-2 text-gold font-semibold py-2 hover:text-gold/80 transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              +91 95384 55783
+            </a>
           </nav>
         </div>
       )}
