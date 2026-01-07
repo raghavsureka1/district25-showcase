@@ -64,7 +64,7 @@ const Enquiry = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with your Web3Forms access key
+          access_key: "7375079e-3a13-4548-ba42-b0ec097fe106",
           to: "pranavarabu@gmail.com",
           subject: "New Enquiry - Nambiar District 25",
           from_name: data.name,
